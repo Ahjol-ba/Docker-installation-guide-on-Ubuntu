@@ -70,6 +70,6 @@ sudo nano /etc/docker/daemon.json
 ```
 3.estart service
 ```
-sudo systemctl reload deamon && \
+sudo systemctl deamon-reload && \
 sudo systemctl restart docker
 ```
