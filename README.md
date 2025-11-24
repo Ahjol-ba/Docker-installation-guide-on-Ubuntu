@@ -1,5 +1,4 @@
-# DIGU
-Docker installation guide on Ubuntu
+# Docker installation guide on Ubuntu
 
 ## Before all, remove default docker component on system，
 ```
