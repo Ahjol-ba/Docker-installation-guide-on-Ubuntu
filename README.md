@@ -52,16 +52,24 @@ source /etc/bash_completion.d/docker.sh
 ```
 sudo groupadd docker && \
 sudo usermod -aG docker $USER && \
-newgrp docker
-```
-### update ```~/.bashrc``` 
-```
-groupadd -f docker
+echo "newgrp docker &>/dev/null" >> ~/.bashrc && \
+source ~/.bashrc && \
+sudo systemctl restart docker
 ```
 
-## Config ```/etc/docker/daemon.json```
+## Config daemon
+1.Open file
+```
+sudo nano /etc/docker/daemon.json
+```
+2.Edit the file
 ```
 "registry-mirrors": [
     "https://xxx" # Your source address.
   ]
+```
+3.estart service
+```
+sudo systemctl reload deamon && \
+sudo systemctl restart docker
 ```
